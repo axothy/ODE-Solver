@@ -8,7 +8,10 @@ EN: A particle of mass 𝑚 moves in a straight line, the initial velocity is
 resistance proportional to the square of the speed (coefficient
 𝑘). Find the particle velocity as a function of time v(t).
 
-Differential equation: dv/dt = ( F - kv^2 ) / m
+Differential equation: 
+
+![alt text](http://images.vfl.ru/ii/1595335466/a9da64f6/31129695.png)
+
 
 =========================================================================
 RU: Задача:
