@@ -2,6 +2,7 @@
 Euler and Runge-Kutta numerical methods of ODE solution
 
 ========================================================================
+
 PHYSIC PROBLEM:
 
 A particle of mass 𝑚 moves in a straight line, the initial velocity is
