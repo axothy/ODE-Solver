@@ -3,7 +3,7 @@ implicit none
 
     contains
     ! == A subroutine that reads and outputs data from file to console      ==
-    ! == Подпрограмма, выполняющая чтение и вывод исходных данных в консоль ==
+    ! == ГЏГ®Г¤ГЇГ°Г®ГЈГ°Г Г¬Г¬Г , ГўГ»ГЇГ®Г«Г­ГїГѕГ№Г Гї Г·ГІГҐГ­ГЁГҐ ГЁ ГўГ»ГўГ®Г¤ ГЁГ±ГµГ®Г¤Г­Г»Гµ Г¤Г Г­Г­Г»Гµ Гў ГЄГ®Г­Г±Г®Г«Гј ==
     subroutine ReadAndPrintData(F,m,k,v0,h,n,method)
     implicit none
     
@@ -11,7 +11,7 @@ implicit none
         integer    :: n, method
         
         ! == Reading data from file         ==
-        ! == Чтение входных данных из файла ==
+        ! == Г—ГІГҐГ­ГЁГҐ ГўГµГ®Г¤Г­Г»Гµ Г¤Г Г­Г­Г»Гµ ГЁГ§ ГґГ Г©Г«Г  ==
         open(1, file='Data.txt')
 
         read(1,*) F, m, k, v0, h, n, method
@@ -19,14 +19,14 @@ implicit none
         print*, 'File read successfully.'
         
         ! == Outputting read data to the console ==
-        ! == Вывод прочитанных данных в консоль  == 
+        ! == Г‚Г»ГўГ®Г¤ ГЇГ°Г®Г·ГЁГІГ Г­Г­Г»Гµ Г¤Г Г­Г­Г»Гµ Гў ГЄГ®Г­Г±Г®Г«Гј  == 
         write(*,'(a5, a8, a8, a10)') 'F', 'm', 'k', 'step'
         write(*,'(f8.2,f8.2,f8.2,f8.4)') F,m,k,h
         write(*,*) ''
     end subroutine ReadAndPrintData
     
     !== The function that performs the Euler's method  ==
-    !== Функция, выполняющая вычисление по методу Эйлера ==
+    !== Г”ГіГ­ГЄГ¶ГЁГї, ГўГ»ГЇГ®Г«Г­ГїГѕГ№Г Гї ГўГ»Г·ГЁГ±Г«ГҐГ­ГЁГҐ ГЇГ® Г¬ГҐГІГ®Г¤Гі ГќГ©Г«ГҐГ°Г  ==
     function Euler(F,m,k,h,n) result (v)
         real, allocatable :: v(:)
         real              :: F,m,k,h
@@ -35,7 +35,7 @@ implicit none
         allocate(v(n+1))
         
         ! == Solution via Euler's method ==
-        ! == Решение методом Эйлера      == 
+        ! == ГђГҐГёГҐГ­ГЁГҐ Г¬ГҐГІГ®Г¤Г®Г¬ ГќГ©Г«ГҐГ°Г       == 
         print*, 'Finding velocity via Eulers method...'
         v(1) = 0
         do i=2,n
@@ -44,7 +44,7 @@ implicit none
     end function Euler
     
     !== The function that performs the Runge-Kutta 2nd Order method        ==
-    !== Функция, выполняющая вычисление по методу Рунге-Кутты 2-го порядка ==
+    !== Г”ГіГ­ГЄГ¶ГЁГї, ГўГ»ГЇГ®Г«Г­ГїГѕГ№Г Гї ГўГ»Г·ГЁГ±Г«ГҐГ­ГЁГҐ ГЇГ® Г¬ГҐГІГ®Г¤Гі ГђГіГ­ГЈГҐ-ГЉГіГІГІГ» 2-ГЈГ® ГЇГ®Г°ГїГ¤ГЄГ  ==
     function Runge_Kutta_2nd_Order(F,m,k,h,n) result(v)
         real, allocatable :: v(:)
         real              :: F,m,k,h
@@ -54,7 +54,7 @@ implicit none
         allocate(v(n+1))
         
         ! == Solution via Runge-Kutta 2nd Order method ==
-        ! == Решение методом Рунге-Кутты 2-го порядка  ==
+        ! == ГђГҐГёГҐГ­ГЁГҐ Г¬ГҐГІГ®Г¤Г®Г¬ ГђГіГ­ГЈГҐ-ГЉГіГІГІГ» 2-ГЈГ® ГЇГ®Г°ГїГ¤ГЄГ   ==
         print*, 'Finding velocity via Runge-Kutta 2nd Order method...'
         v(1) = 0
         do i=2,n
@@ -66,7 +66,7 @@ implicit none
     end function Runge_Kutta_2nd_Order
     
     !== The function that performs the Runge-Kutta 4th Order method        ==
-    !== Функция, выполняющая вычисление по методу Рунге-Кутты 4-го порядка ==
+    !== Г”ГіГ­ГЄГ¶ГЁГї, ГўГ»ГЇГ®Г«Г­ГїГѕГ№Г Гї ГўГ»Г·ГЁГ±Г«ГҐГ­ГЁГҐ ГЇГ® Г¬ГҐГІГ®Г¤Гі ГђГіГ­ГЈГҐ-ГЉГіГІГІГ» 4-ГЈГ® ГЇГ®Г°ГїГ¤ГЄГ  ==
     function Runge_Kutta_4th_Order(F,m,k,h,n) result(v)
         real, allocatable :: v(:)
         real              :: F,m,k,h
@@ -76,7 +76,7 @@ implicit none
         allocate(v(n+1))
         
         ! == Solution via Runge-Kutta 4th Order method ==
-        ! == Решение методом Рунге-Кутты 4-го порядка  ==
+        ! == ГђГҐГёГҐГ­ГЁГҐ Г¬ГҐГІГ®Г¤Г®Г¬ ГђГіГ­ГЈГҐ-ГЉГіГІГІГ» 4-ГЈГ® ГЇГ®Г°ГїГ¤ГЄГ   ==
         print*, 'Finding velocity via Runge-Kutta 4th Order method...'
         v(1) = 0
         do i=2,n
@@ -89,7 +89,7 @@ implicit none
     end function Runge_Kutta_4th_Order
     
     ! == Function declaration   ==
-    ! == Описываем нашу функцию == 
+    ! == ГЋГЇГЁГ±Г»ГўГ ГҐГ¬ Г­Г ГёГі ГґГіГ­ГЄГ¶ГЁГѕ == 
     real function fxy(F,m,k,v)
     implicit none
         real, intent(in) :: F,m,k,v
@@ -141,52 +141,10 @@ implicit none
     
 end module percent
     
-module OrderOfAccuracy
-use methods
-use percent
-implicit none
-      
-      contains
-    
-      subroutine OrderOfAccuracyEstimation()
-      real       :: F, m, k, h1, h2, v0
-      integer    :: n1, n2, method
-      real, allocatable :: v_h1(:), v_h2(:)
-      
-      open(4, file='DataForOrderEstimation.txt')
-      read(4,*) F, m, k, v0, h1, h2, n1, n2, method
-      close(4)
-      
-      allocate(v_h1(n1+1))
-      allocate(v_h2(n2+1))
-      
-      if (method==1) then
-        v_h1 = Euler(F,m,k,h1,n1)
-        v_h2 = Euler(F,m,k,h2,n2)
-        
-      else if (method==2) then
-        v_h1 = Runge_Kutta_2nd_Order(F,m,k,h1,n1)
-        v_h2 = Runge_Kutta_2nd_Order(F,m,k,h2,n2)
-    
-      else if (method==3) then
-        v_h1 = Runge_Kutta_4th_Order(F,m,k,h1,n1)
-        v_h2 = Runge_Kutta_4th_Order(F,m,k,h2,n2)
-        
-      else
-        print*, 'Error in selecting method'
-        pause
-      end if
-      
-      call PercentCounter(F,m,k,h1,n1,v_h1)
-      call PercentCounter(F,m,k,h2,n2,v_h2)
-      
-      end subroutine 
-end module OrderOfAccuracy
-    
 program main
 use methods
 use percent
-use OrderOfAccuracy
+
 implicit none
 
 real, allocatable :: v(:), t(:)
@@ -194,7 +152,7 @@ real              :: F, m, k, h, v0
 integer           :: i, n, method
 
     ! == Calling the subroutine for reading data ==
-    ! == Вызываем подпрограмму для чтения данных ==
+    ! == Г‚Г»Г§Г»ГўГ ГҐГ¬ ГЇГ®Г¤ГЇГ°Г®ГЈГ°Г Г¬Г¬Гі Г¤Г«Гї Г·ГІГҐГ­ГЁГї Г¤Г Г­Г­Г»Гµ ==
     call ReadAndPrintData(F,m,k,v0,h,n,method)
     allocate(v(n+1))
     allocate(t(n+1))
@@ -208,7 +166,7 @@ integer           :: i, n, method
     print*, ''
     
     ! == Selecting method of solution ==    
-    ! == Выбор метода решения         ==
+    ! == Г‚Г»ГЎГ®Г° Г¬ГҐГІГ®Г¤Г  Г°ГҐГёГҐГ­ГЁГї         ==
     if (method==1) then
         v = Euler(F,m,k,h,n)
     
@@ -230,7 +188,7 @@ integer           :: i, n, method
     end if
     
     ! == Saving solution to a new file     ==
-    ! == Сохраняем вычисление в новый файл ==
+    ! == Г‘Г®ГµГ°Г Г­ГїГҐГ¬ ГўГ»Г·ГЁГ±Г«ГҐГ­ГЁГҐ Гў Г­Г®ГўГ»Г© ГґГ Г©Г« ==
      open(2, file='OutputData.txt', status='replace')
         write(2,'(a12, a12)') 'v(t)', 't'
         
@@ -246,8 +204,6 @@ integer           :: i, n, method
         
     print*, 'File successfully created.'
     call PercentCounter(F,m,k,h,n,v)
-    
-    call OrderOfAccuracyEstimation()
     
     deallocate(v)
     deallocate(t)
