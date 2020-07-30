@@ -190,12 +190,13 @@ integer           :: i, n, method
     ! == Saving solution to a new file     ==
     ! == Ñîõðàíÿåì âû÷èñëåíèå â íîâûé ôàéë ==
      open(2, file='OutputData.txt', status='replace')
-        write(2,'(a12, a12)') 'v(t)', 't'
+        write(2,*) 't:'
         
         do i=1,n
             write(2,'(f12.5,f12.5)') t(i)
         end do
         write(2,*) '==========================='
+        write(2,*) 'v(t):'
         do i=1,n
             write(2,'(f12.5,f12.5)') v(i)
         end do
@@ -209,4 +210,3 @@ integer           :: i, n, method
     deallocate(t)
 pause    
 end program main
-    
